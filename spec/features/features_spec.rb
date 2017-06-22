@@ -39,26 +39,35 @@ describe Battle, :type => :feature do
       expect(page).to have_content 'Verity'
     end
 
-    # it "displays Player 2's hit points" do
-    #   expect(page).to have_content 'Player 2 HP: 100'
-    # end
+    it "displays Player 2's hit points" do
+      expect(page).to have_content 'Player 2 HP: 100'
+    end
 
     it 'has a submit button' do
       expect { find_button('Attack') }.to_not raise_error
     end
 
-    it 'gives an attack confirmation' do
-        click_button('Attack')
-        expect(page).to have_content 'Attack reduced other player\'s HP by 10'
-    end
+
   end
 
-  describe "attack.erb" do
-    it "should allow the player to continue" do
+  describe "attacking players" do
+    before do
       sign_in_and_play
       click_button("Attack")
-      expect { find_button('Continue') }.to_not raise_error
-      end
     end
+
+    it 'gives an attack confirmation' do
+        expect(page).to have_content 'Attack reduced other player\'s HP by 10'
+    end
+
+    it "should allow the player to continue" do
+      expect { find_button('Continue') }.to_not raise_error
+    end
+
+    it "reduces player2 HP by 10 " do
+      click_button('Continue')
+      expect(page).to have_content 'Player 2 HP: 90'
+    end
+  end
 
 end
