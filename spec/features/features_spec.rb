@@ -1,26 +1,25 @@
 require './app.rb'
 
-describe Battle, :type => :feature do
-
-  describe "index.erb" do
+feature Battle do
+  describe 'index.erb' do
     before do
       visit '/'
     end
 
-    it "shows an expected string" do
+    it 'shows an expected string' do
       expect(page).to have_content 'Welcome to Battle'
     end
 
-    it "Prompts the user to enter names" do
-      expect(page).to have_content "Enter your Names"
+    it 'Prompts the user to enter names' do
+      expect(page).to have_content 'Enter your Names'
     end
 
-    describe "Player Name Form" do
-      it "has a text field for player 1" do
+    describe 'Player Name Form' do
+      it 'has a text field for player 1' do
         expect { find_field('player-1') }.to_not raise_error
       end
 
-      it "has a text field for player 2" do
+      it 'has a text field for player 2' do
         expect { find_field('player-2') }.to_not raise_error
       end
 
@@ -30,12 +29,12 @@ describe Battle, :type => :feature do
     end
   end
 
-  describe "play.erb" do
+  describe 'play.erb' do
     before do
       sign_in_and_play
     end
 
-    it "displays player names" do
+    it 'displays player names' do
       expect(page).to have_content 'Verity'
     end
 
@@ -46,28 +45,25 @@ describe Battle, :type => :feature do
     it 'has a submit button' do
       expect { find_button('Attack') }.to_not raise_error
     end
-
-
   end
 
-  describe "attacking players" do
+  describe 'attacking players' do
     before do
       sign_in_and_play
-      click_button("Attack")
+      click_button('Attack')
     end
 
     it 'gives an attack confirmation' do
-        expect(page).to have_content 'Attack reduced other player\'s HP by 10'
+      expect(page).to have_content 'Attack reduced other player\'s HP by 10'
     end
 
-    it "should allow the player to continue" do
+    it 'should allow the player to continue' do
       expect { find_button('Continue') }.to_not raise_error
     end
 
-    it "reduces player2 HP by 10 " do
+    it 'reduces player2 HP by 10 ' do
       click_button('Continue')
       expect(page).to have_content 'Player 2 HP: 90'
     end
   end
-
 end
