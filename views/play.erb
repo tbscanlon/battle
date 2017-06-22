@@ -1,7 +1,7 @@
-<h1><%= @player1_name %></h1>
+<h1><%= $one.name %></h1>
 <h2> vs </h2>
-<h1><%= @player2_name %></h1>
-<p id="player_2_hp">Player 2 HP: <%= @player_2_hp %></p>
+<h1><%= $two.name %></h1>
+<!-- <p id="player_2_hp">Player 2 HP: <%= @player_2_hp %></p> -->
 
 <form class="player_actions" action="/attack" method="post">
   <input type="submit" value="Attack">
