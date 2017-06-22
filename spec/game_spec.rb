@@ -29,6 +29,11 @@ describe Game do
     it {is_expected.to respond_to(:change_players) }
 
     context "Switching turns" do
+
+      before do
+        game.change_players
+      end
+
       it 'switches to player 2' do
         expect(game.change_players).to eq false
       end
@@ -40,7 +45,12 @@ describe Game do
     end
   end
 
-  describe '#attack', focus: true do
+  describe '#attack' do
+
+    before do
+      game.change_players
+    end
+    
     it { is_expected.to respond_to(:attack) }
 
     context "Player 1's Turn" do

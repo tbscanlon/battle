@@ -54,7 +54,7 @@ feature Battle do
     end
 
     it 'gives an attack confirmation' do
-      expect(page).to have_content 'Attack reduced other player\'s HP by 10'
+      expect(page).to have_content 'Tom attacked Verity for 10 points damage'
     end
 
     it 'should allow the player to continue' do

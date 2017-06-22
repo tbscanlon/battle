@@ -4,7 +4,7 @@ class Game
   def initialize(player1, player2)
     @player1       = player1
     @player2       = player2
-    @player_1_turn = true
+    @player_1_turn = false
   end
 
   def attack
@@ -15,4 +15,9 @@ class Game
   def change_players
     @player_1_turn = !@player_1_turn
   end
+
+  def player_1_turn?
+    @player_1_turn
+  end
+
 end
