@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>
+      <% if $game.player1.dead? %>
+      <%= $game.player1.name %>
+      <% elsif $game.player2.dead? %>
+      <%= $game.player2.name %>
+      <% end %>
+       Loses!
+    </h1>
+  </body>
+</html>

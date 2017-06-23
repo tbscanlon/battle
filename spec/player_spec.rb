@@ -17,4 +17,11 @@ describe Player do
       expect(player.hp).to eq 90
     end
   end
+
+  describe '#dead' do
+    it 'is true when a player\'s health is 0' do
+      player.take_damage(100)
+      expect(player).to be_dead
+    end
+  end
 end

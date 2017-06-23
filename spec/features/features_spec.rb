@@ -75,4 +75,15 @@ feature Battle do
       expect(page).to have_content 'Player 2 HP: 90'
     end
   end
+
+  describe "Losing the Game" do
+    before do
+      both_players_attack_ten_times
+    end
+
+    it 'shows an endgame message' do
+      both_players_attack_ten_times
+      expect(page).to have_content 'Loses'
+    end
+  end
 end

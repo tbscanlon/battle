@@ -9,4 +9,8 @@ class Player
   def take_damage(points)
     @hp -= points
   end
+
+  def dead?
+    hp <= 0
+  end
 end

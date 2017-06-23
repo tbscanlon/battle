@@ -16,12 +16,17 @@ class Battle < Sinatra::Base
 
   get '/play' do
     $game.change_players
+    redirect to('/endgame') if $game.player1.dead? || $game.player2.dead?
     erb(:play)
   end
 
   get '/attack' do
     $game.attack
     erb(:attack)
+  end
+
+  get '/endgame' do
+    erb(:endgame)
   end
 
   run! if app_file == $PROGRAM_NAME
