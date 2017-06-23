@@ -1,7 +1,7 @@
-<h1> <% if $game.player_1_turn? %>
-  <%= $game.player1.name %> attacked <%= $game.player2.name %> for 10 points damage
+<h1> <% if @game.player_1_turn? %>
+  <%= @game.player1.name %> attacked <%= @game.player2.name %> for 10 points damage
   <% else %>
-  <%= $game.player2.name %> attacked <%= $game.player1.name %> for 10 points damage
+  <%= @game.player2.name %> attacked <%= @game.player1.name %> for 10 points damage
   <% end %>
 </h1>
 

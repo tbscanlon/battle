@@ -31,10 +31,10 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6 text-center" style="background:red;">
-            <h2><%= $game.player1.name %></h2>
-            <span id="player_1_hp">Player 1 HP: <%= $game.player1.hp %></span>
+            <h2><%= @game.player1.name %></h2>
+            <span id="player_1_hp">Player 1 HP: <%= @game.player1.hp %></span>
 
-            <% if $game.player_1_turn? %>
+            <% if @game.player_1_turn? %>
             <form class="player1_actions" action="/attack">
               <div class="form-group">
                 <button type="submit" class="btn btn-danger">Attack</button>
@@ -52,10 +52,10 @@
         </div>
 
         <div class="col-md-6 text-center" style="background:blue;">
-          <h2><%= $game.player2.name %></h2>
-          <span id="player_2_hp">Player 2 HP: <%= $game.player2.hp %></span>
+          <h2><%= @game.player2.name %></h2>
+          <span id="player_2_hp">Player 2 HP: <%= @game.player2.hp %></span>
 
-          <% unless $game.player_1_turn? %>
+          <% unless @game.player_1_turn? %>
           <form class="player1_actions" action="/attack">
             <div class="form-group">
               <button type="submit" class="btn btn-danger">Attack</button>
