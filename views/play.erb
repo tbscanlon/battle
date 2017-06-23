@@ -13,9 +13,9 @@
     <link href="https://fonts.googleapis.com/css?family=Frijole|Permanent+Marker" rel="stylesheet">
 
     <style media="screen">
-    .col-md-6 {
+    /*.col-md-6 {
       padding-bottom: 35%;
-    }
+    }*/
 
     h2 {
       font-family: 'Frijole', cursive;
@@ -25,48 +25,52 @@
     span {
       margin-bottom: 20pt;
     }
+
+    p {
+      font-family: 'Permanent Marker';
+      font-size: 30pt;
+      color: #24991D;
+    }
+
+    #player-2 {
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    }
     </style>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-6 text-center" style="background:red;">
+        <div class="col-md-6 text-center">
             <h2><%= @game.player1.name %></h2>
-            <span id="player_1_hp">Player 1 HP: <%= @game.player1.hp %></span>
+            <img src="img/fiter.gif" class="img-responsive center-block" alt="">
+            <p id="player_1_hp"><%= @game.player1.hp %> / 100</p>
 
             <% if @game.player_1_turn? %>
             <form class="player1_actions" action="/attack">
-              <div class="form-group">
-                <button type="submit" class="btn btn-danger">Attack</button>
-              </div>
-
-              <div class="form-group">
-                <button type="submit" class="btn btn-default">Paralyze</button>
-              </div>
-
-              <div class="form-group">
-                <button type="submit" class="btn btn-default">Poison</button>
+              <div class="btn-group">
+                <button type="submit" class="btn btn-danger btn-lg">Attack</button>
+                <button type="submit" class="btn btn-primary btn-lg">Sleep</button>
+                <button type="submit" class="btn btn-success btn-lg">Poison</button>
+                <button type="submit" class="btn btn-warning btn-lg">Paralyze</button>
               </div>
             </form>
             <% end %>
         </div>
 
-        <div class="col-md-6 text-center" style="background:blue;">
+        <div class="col-md-6 text-center">
           <h2><%= @game.player2.name %></h2>
-          <span id="player_2_hp">Player 2 HP: <%= @game.player2.hp %></span>
+          <img id="player-2" src="img/fiter.gif" class="img-responsive center-block" alt="">
+          <p id="player_2_hp"><%= @game.player2.hp %> / 100</p>
 
           <% unless @game.player_1_turn? %>
           <form class="player1_actions" action="/attack">
-            <div class="form-group">
-              <button type="submit" class="btn btn-danger">Attack</button>
-            </div>
-
-            <div class="form-group">
-              <button type="submit" class="btn btn-default">Paralyze</button>
-            </div>
-
-            <div class="form-group">
-              <button type="submit" class="btn btn-default">Poison</button>
+            <div class="btn-group">
+              <button type="submit" class="btn btn-danger btn-lg">Attack</button>
+              <button type="submit" class="btn btn-primary btn-lg">Sleep</button>
+              <button type="submit" class="btn btn-success btn-lg">Poison</button>
+              <button type="submit" class="btn btn-warning btn-lg">Paralyze</button>
             </div>
           </form>
           <% end %>

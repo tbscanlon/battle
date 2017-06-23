@@ -39,11 +39,11 @@ feature Battle do
     end
 
     it "displays Player 1's hit points" do
-      expect(page).to have_content 'Player 1 HP: 100'
+      expect(page).to have_content 'Tom 100 / 100'
     end
 
     it "displays Player 2's hit points" do
-      expect(page).to have_content 'Player 2 HP: 100'
+      expect(page).to have_content 'Verity 100 / 100'
     end
   end
 
@@ -68,11 +68,11 @@ feature Battle do
     end
 
     it 'reduces player 1\'s HP by 10' do
-      expect(page).to have_content 'Player 1 HP: 90'
+      expect(page).to have_content 'Tom 90 / 100'
     end
 
     it 'reduces player 2\'s HP by 10' do
-      expect(page).to have_content 'Player 2 HP: 90'
+      expect(page).to have_content 'Verity 90 / 100'
     end
   end
 
