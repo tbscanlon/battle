@@ -1,19 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Battle</title>
-  </head>
-  <body>
-    <h1>Welcome to Battle</h1>
+<head>
+  <meta charset="utf-8">
+  <title>FIGHTS</title>
 
-    <h2>Enter your Names</h2>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <form class="player-names" action="/names" method="post">
-      <input type="text" id="player-1" name="player_1" value="Player 1">
-      <input type="text" id="player-2" name="player_2" value="Player 2">
-      <input type="submit" value="Play">
-    </form>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  </body>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Frijole|Permanent+Marker" rel="stylesheet">
+
+  <style media="screen">
+    body {
+      background: url(img/index-bg.jpg);
+      background-size: 100%;
+    }
+
+    h1 {
+      font-family: 'Frijole', cursive;
+      font-size: 80pt;
+      color: #FF522B;
+    }
+
+    h2 {
+      font-family: 'Permanent Marker';
+      font-size: 30pt;
+      color: #FF891E;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1 class="text-center">FIGHTS</h1>
+      <h2 class="text-center">Enter your Names</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+      <form class="player-names" action="/names" method="post">
+        <div class="form-group">
+          <input type="text" id="player-1" name="player_1" placeholder="Player 1">
+        </div>
+
+        <div class="form-group">
+          <input type="text" id="player-2" name="player_2" placeholder="Player 2">
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-danger">Play</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</body>
 </html>

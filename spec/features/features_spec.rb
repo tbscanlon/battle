@@ -7,7 +7,7 @@ feature Battle do
     end
 
     it 'shows an expected string' do
-      expect(page).to have_content 'Welcome to Battle'
+      expect(page).to have_content 'FIGHTS'
     end
 
     it 'Prompts the user to enter names' do
